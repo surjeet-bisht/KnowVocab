@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 24" width="19" height="24">
+	<title>bookmark</title>
+	<defs>
+		<image  width="19" height="24" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAMAAAAvSTY9AAAAAXNSR0IB2cksfwAAAGZQTFRFAAAAxMTEw8HBw8HBw8PDv7+/+Pf3////9/f3x8XFv7+/v7+/y8nJ0tHRw7+/6OjozszM4eDg8PDww8DAwr+/wr+/6ejo+/v73dzcwsHBxL+/wr+/wsHB2dnZ5eTkw7+/wr+/y8jIfK9V9wAAACJ0Uk5TAF/v/38Q/////zAg//9A/////79QoP///+9wYN///4Bw/zhv/0AAAABfSURBVHic7chHDoAgFEXRZ/kgghW7WNj/Ji0JCTpxA57ZvUAQRr4wBihi3JeIFFLxpyz/38cryur16kw3req81w/jBGA2C3NvFRvhtpuBXU9YLeHIVtnzmRy+q4nwQgcSKg52CTw9tgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

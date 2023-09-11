@@ -1,0 +1,24 @@
+<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="26" height="25" fill="#F5F5F5"/>
+<g id="Dictionary">
+<g clip-path="url(#clip0_0_1)">
+<rect x="-115" y="-592" width="360" height="620" rx="4" fill="white"/>
+<g id="Footer">
+<path d="M-115 -3H245V24C245 26.2091 243.209 28 241 28H-111C-113.209 28 -115 26.2091 -115 24V-3Z" fill="white"/>
+<g id="fe:app-menu">
+<g id="feAppMenu0">
+<g id="feAppMenu1">
+<path id="feAppMenu2" fill-rule="evenodd" clip-rule="evenodd" d="M17.2619 16.6667H21.4286V20.8333H17.2619V16.6667ZM11.0119 16.6667H15.1786V20.8333H11.0119V16.6667ZM4.7619 16.6667H8.92857V20.8333H4.7619V16.6667ZM17.2619 10.4167H21.4286V14.5833H17.2619V10.4167ZM11.0119 10.4167H15.1786V14.5833H11.0119V10.4167ZM4.7619 10.4167H8.92857V14.5833H4.7619V10.4167ZM17.2619 4.16666H21.4286V8.33332H17.2619V4.16666ZM11.0119 4.16666H15.1786V8.33332H11.0119V4.16666ZM4.7619 4.16666H8.92857V8.33332H4.7619V4.16666Z" fill="#C3C1C1"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<rect x="-114.5" y="-591.5" width="359" height="619" rx="3.5" stroke="#C3C1C1"/>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect x="-115" y="-592" width="360" height="620" rx="4" fill="white"/>
+</clipPath>
+</defs>
+</svg>

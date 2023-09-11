@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <SpaProxyServerUrl>https://localhost:44471</SpaProxyServerUrl>
+    <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.151" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\src\assets\css\style.css" />
+    <Content Include="ClientApp\src\assets\fonts\Poppins-Medium.eot" />
+    <Content Include="ClientApp\src\assets\fonts\Poppins-Medium.svg" />
+    <Content Include="ClientApp\src\assets\fonts\Poppins-Medium.ttf" />
+    <Content Include="ClientApp\src\assets\fonts\Poppins-Medium.woff" />
+    <Content Include="ClientApp\src\assets\fonts\Poppins-Medium.woff2" />
+    <Content Include="ClientApp\src\assets\fonts\Ubuntu-Medium.eot" />
+    <Content Include="ClientApp\src\assets\fonts\Ubuntu-Medium.svg" />
+    <Content Include="ClientApp\src\assets\fonts\Ubuntu-Medium.ttf" />
+    <Content Include="ClientApp\src\assets\fonts\Ubuntu-Medium.woff" />
+    <Content Include="ClientApp\src\assets\fonts\Ubuntu-Medium.woff2" />
+    <Content Include="ClientApp\src\assets\images\book-outline.svg" />
+    <Content Include="ClientApp\src\assets\images\bookmark.svg" />
+    <Content Include="ClientApp\src\assets\images\camera-thin.svg" />
+    <Content Include="ClientApp\src\assets\images\close-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\eye-icon-color.svg" />
+    <Content Include="ClientApp\src\assets\images\eye-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\facebook.svg" />
+    <Content Include="ClientApp\src\assets\images\google.svg" />
+    <Content Include="ClientApp\src\assets\images\heart-solid-fill.png" />
+    <Content Include="ClientApp\src\assets\images\heart-solid.png" />
+    <Content Include="ClientApp\src\assets\images\home-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\listing-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\logo.svg" />
+    <Content Include="ClientApp\src\assets\images\nav-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\news-details.jpg" />
+    <Content Include="ClientApp\src\assets\images\notification-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\ph_eye-thin.svg" />
+    <Content Include="ClientApp\src\assets\images\profile-bg.png" />
+    <Content Include="ClientApp\src\assets\images\profile-img.png" />
+    <Content Include="ClientApp\src\assets\images\Recommended.jpg" />
+    <Content Include="ClientApp\src\assets\images\share-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\time-icon.svg" />
+    <Content Include="ClientApp\src\assets\images\user.svg" />
+    <Content Include="ClientApp\src\assets\images\whats_new.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LearnWithFun.Data\LearnWithFun.Data.csproj" />
+  </ItemGroup>
+
+    <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+  
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --configuration production" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>
